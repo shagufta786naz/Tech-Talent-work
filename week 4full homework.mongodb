@@ -1,0 +1,300 @@
+
+
+week 4 homework.mongodb;
+
+//task 1.
+
+use ("moviedatabase");
+db.createCollection('movies')
+
+use ("moviedatabase");
+db.movies.insertMany([
+  {
+    title: 'Schindlers List',
+    genre: ['Biography', 'Drama', 'History'],
+    certificate: 15,
+    rating: 9.0,
+    tags: ['accountant', 'villa', 'womanizer']
+  },
+  {
+    title: "Forrest Gump",
+    genre: ['Drama', 'Romance'],
+    certificate: 12,
+    rating: 8.8,
+    tags: ['vietnam war', 'shrimp boat']
+  },
+  {
+    title: "Inception",
+    genre: ['Action', 'Adventure', 'Sci-Fi'],
+    certificate: '12A',
+    rating: 8.8,
+    tags: ['dream', 'mindbender', 'subconscious']
+  },
+  {
+    title: "Monsters, Inc",
+    genre: ['Animation', 'Adventure', 'Comedy'],
+    certificate: 'U',
+    rating: 8.1,
+    tags: ['monster', 'scream', 'portal door']
+  },
+  {
+title: 'The Shawshank Redemption',
+  genre: 'Drama',
+  certificate: 15,
+  rating: 9.3,
+  tags: ['prison', 'escape']
+  },
+{
+title: 'Gone Girl',
+    genre: ['Drama', 'Mystery', 'Thriller'],
+    certificate: 18,
+    rating: 8.1,
+    tags: ['missing person', 'disappearance', 'murder']
+  },
+  {
+    title: 'breathe into shadow',
+    genre:['mystery','drama'],
+    certificate:17,
+    rating:9.1,
+    tags:['missing person','mental disorder']
+  },
+
+
+
+
+{
+    title: 'drushyam',
+    genre:['action','mystery','thriller'],
+    certificate:15,
+    rating:10,
+    tags:['murder','disappearance']
+  },
+
+
+
+{
+    title:'decoupled',
+    genre:['drama','romance'],
+    certificate:13.2,
+    rating:8.5,
+    tags:['subconscious','womeniser']
+  },
+
+
+{
+    title: 'mola jutt',
+    genre:['action','history','thriller'],
+    certificate:15,
+    rating:10.5,
+    tags:['prison','tribal war']
+  }
+])
+
+
+use ("moviedatabase");
+db.createCollection('series')
+
+use ('moviedatabase');
+db.series.insertMany([
+
+{
+ title:'panchayat',
+        genre:['comedy','drama'],
+        country_of_origin:'india',
+        language:'hindi',
+        episodes:16,
+        seasons:2
+    },
+    {
+title:'mirzapur',
+        genre:['crime','thriller','action'],
+        country_of_origin: 'india',
+        language:'hindi',
+        episodes:19,
+        seasons:2
+    },
+    {
+title:'made in heaven',
+        genre:['drama','romance'],
+        country_of_origin:'india',
+        language:'hindi',
+        episodes:9,
+        seasons:1
+    },
+    {
+title:'guilty minds',
+        genre:'legal drama',
+        country_of_origin:'india',
+        language:'hindi',
+        episodes:10,
+        seasons:1
+    },
+    {
+title:'manifest',
+        genre:['drama','supernatural'],
+        country_of_origin:'united states',
+        language:'english',
+        episodes:52,
+        seasons:4
+    },
+    {
+title:'peaky blinders',
+        genre:['historical fiction','crime drama'],
+        country_of_origin:'united kingdom',
+        language:'english',
+        episodes:36,
+        seasons:6
+    },
+    {
+title:'lock&key',
+        genre:['fantasy drama','supernatural horror'],
+        country_of_origin:'united states',
+        language:'english',
+        episodes:28,
+        seasons:3
+    },
+    {
+title:'sherlock',
+        genre:['crime','mystery','comedy','drama'],
+        country_of_origin:'united kingdom',
+        episodes:13,
+        seasons:4
+    },
+    {
+title:'the sandman',
+        genre:['fantasy drama','supernatural horror','superhero'],
+        episodes:11,
+        seasons:1
+    },
+    {
+title:'body guard',
+        genre:['drama','thriller'],
+        country_of_origin:'united kingdom',
+        language:'english',
+        episodes:6,
+        seasons:1
+    }
+])
+
+
+use("moviedatabase");
+db.createCollection ('documentries')
+
+use("moviedatabase");
+db.documentries.insertMany([
+    {
+        title:'made you look',
+        country:'canada',
+        language:'english',
+        produced_by:'barry averich'
+    },
+    {
+        title:'the rescue',
+        country:'united states',
+        language:'english',
+        produced_by:'Elizabeth Chai Vasarhelyi'
+    },
+{
+        title:'goodnight oppy',
+        country:'united states',
+        language:'english',
+        produced_by:'Justin Falvey'
+    },
+
+    {
+        title:'flee',
+        country:'france',
+        language:'french',
+        produced_by:'monica hellstrom'
+    },
+
+    {
+        title:'into the deep',
+        country:'denmark',
+        language:'english',
+        produced_by:'Mette Heide'
+    },
+
+    {
+        title:'this much i know to be true',
+        country:'united kingdom',
+        language:'english',
+        produced_by:'Isaac Hoff'
+    },
+
+    {
+        title:'the vow',
+        country:'united states',
+        language:'english',
+    produced_by:'Karim Amer'
+    },
+
+    {
+        title:'val',
+        country:'united states',
+        language:'english',
+        produced_by:'Leo Scott'
+    },
+
+    {
+        title:'the social dilema',
+        country:'united states',
+        language:'english',
+        produced_by:'Larissa Rhodes'
+    },
+
+    {
+        title:'my old school',
+        country:'united states',
+        language:'english',
+        produced_by:'John Archer'
+    },
+])
+
+use ("moviedatabase");
+db.movies.updateOne({title:'Forrest Gump'},
+{
+    $set:{rating:9}
+    })
+
+    use("moviedatabase");
+    db.movies.deleteOne({title:'Decoupled'})
+
+use("moviedatabase");
+db.movies.updateOne({title:'Decoupled'},
+{
+    $set:
+
+{title:'decoupled',
+    genre:['drama','romance'],
+    certificate:13.2,
+    rating:8.5,
+    tags:['subconscious','womeniser']
+}},
+{upsert:true})
+
+//end of task 2
+
+task 2 
+
+
+
+use("uni");
+db.student.find({CourseID:4})
+
+use("uni");
+db.student.find({CourseID:5,Forenames:'Joe'})
+
+use ("uni");
+db.student.find({$or:[{CourseID:5},{Forenames:'Joe'}]})
+
+
+use ("uni"),
+db.application.find().sort({StudentID:1})
+
+use ("uni");
+db.class.find().count({LectureID:11})
+
+
+
+//end of task 2.
